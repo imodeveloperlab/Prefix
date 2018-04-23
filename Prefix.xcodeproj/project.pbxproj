@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41CA1B20208E668F00F00F8A /* Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA1B1E208E659600F00F8A /* Prefix.swift */; };
+		41CA1B2F208E68AF00F00F8A /* PrefixParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA1B2D208E68AC00F00F8A /* PrefixParser.swift */; };
+		41CA1B32208E6C8A00F00F8A /* PrefixTypedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA1B30208E6C1100F00F8A /* PrefixTypedValue.swift */; };
+		41CA1B36208E6CE900F00F8A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CA1B34208E6CE500F00F8A /* StringExtension.swift */; };
 		OBJ_100 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Task.swift */; };
 		OBJ_101 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* Term.swift */; };
 		OBJ_102 /* VersionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* VersionCommand.swift */; };
@@ -54,6 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41CA1B1E208E659600F00F8A /* Prefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefix.swift; sourceTree = "<group>"; };
+		41CA1B2D208E68AC00F00F8A /* PrefixParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixParser.swift; sourceTree = "<group>"; };
+		41CA1B30208E6C1100F00F8A /* PrefixTypedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixTypedValue.swift; sourceTree = "<group>"; };
+		41CA1B34208E6CE500F00F8A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		"Files::Files::Product" /* Files.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Files.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_13 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/borinschiivan/Desktop/Prefix/.build/checkouts/Files.git-6739420172119258925/Package.swift"; sourceTree = "<group>"; };
 		OBJ_14 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
@@ -184,7 +192,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -193,7 +201,6 @@
 				OBJ_11 /* Dependencies */,
 				OBJ_38 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -208,6 +215,10 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* main.swift */,
+				41CA1B1E208E659600F00F8A /* Prefix.swift */,
+				41CA1B30208E6C1100F00F8A /* PrefixTypedValue.swift */,
+				41CA1B2D208E68AC00F00F8A /* PrefixParser.swift */,
+				41CA1B34208E6CE500F00F8A /* StringExtension.swift */,
 			);
 			name = Prefix;
 			path = Sources/Prefix;
@@ -252,6 +263,7 @@
 			buildPhases = (
 				OBJ_64 /* Sources */,
 				OBJ_66 /* Frameworks */,
+				41CA1B21208E67FE00F00F8A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -323,7 +335,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_38 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,6 +349,22 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41CA1B21208E67FE00F00F8A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swift build -c release -Xswiftc -static-stdlib\ncd .build/x86_64-apple-macosx10.10/release\ncp -f Prefix /usr/local/bin/prefix";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_46 /* Sources */ = {
@@ -367,7 +395,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				41CA1B2F208E68AF00F00F8A /* PrefixParser.swift in Sources */,
 				OBJ_65 /* main.swift in Sources */,
+				41CA1B36208E6CE900F00F8A /* StringExtension.swift in Sources */,
+				41CA1B32208E6C8A00F00F8A /* PrefixTypedValue.swift in Sources */,
+				41CA1B20208E668F00F00F8A /* Prefix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
