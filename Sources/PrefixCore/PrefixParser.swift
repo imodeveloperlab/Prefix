@@ -14,15 +14,30 @@ public class PrefixParser {
     
     private static var cachedRegularExpressions: [String: NSRegularExpression] = [:]
     
-    static func mathWord(_ word: String) -> PrefixParserPattern {
+    /// Create PrefixParserPattern which will check if string contain word
+    ///
+    /// - Parameter word: Word to be contained
+    /// - Returns: PrefixParserPattern
+    static func containWord(_ word: String) -> PrefixParserPattern {
         return PrefixParserPattern("(?:\\\(word))")
     }
     
+    /// Get elements from string
+    ///
+    /// - Parameters:
+    ///   - text: String
+    ///   - pattern: PrefixParserPattern
+    ///   - range: NSRange
+    /// - Returns: [NSTextCheckingResult]
     static func getElements(from text: String, with pattern: PrefixParserPattern, range: NSRange) -> [NSTextCheckingResult] {
         guard let elementRegex = regularExpression(for: pattern) else { return [] }
         return elementRegex.matches(in: text, options: [], range: range)
     }
     
+    /// Make an regular expresion
+    ///
+    /// - Parameter pattern: PrefixParserPattern
+    /// - Returns: NSRegularExpression?
     private static func regularExpression(for pattern: PrefixParserPattern) -> NSRegularExpression? {
         if let regex = cachedRegularExpressions[pattern.value] {
             return regex

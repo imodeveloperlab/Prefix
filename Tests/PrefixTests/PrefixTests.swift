@@ -18,10 +18,10 @@ class PrefixTests: XCTestCase {
         //CONTAIN .swift
         XCTAssertTrue(".swift".contains(PrefixParserPattern("(?:\\.swift)")))
         
-        //TO NOT MATCH .swift
-        XCTAssertTrue(!"swift".match(".swift"))
+        //TO NOT contain .swift
+        XCTAssertTrue(!"swift".contain(".swift"))
         
-        //TO MATCH .swift
-        XCTAssertTrue(".swift".match(".swift"))
+        //TO contain .swift
+        XCTAssertTrue(".swift".contain(".swift"))
     }
 }

@@ -13,8 +13,9 @@
 //_ = greeter.go()
 
 import PrefixCore
+import Files
 
-let prefix = Prefix()
-let files = prefix.getFilesFromCurrentFolder()
+let prefix = PrefixFiles()
+let files = prefix.getAllSwiftFiles(folder: try Folder.home.subfolder(named: "PrefixTest"))
 
 print(files ?? "no files found")

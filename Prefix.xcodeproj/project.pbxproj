@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_102 /* Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Prefix.swift */; };
+		OBJ_102 /* PrefixFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* PrefixFiles.swift */; };
 		OBJ_103 /* PrefixParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* PrefixParser.swift */; };
 		OBJ_104 /* PrefixTypedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* PrefixTypedValue.swift */; };
 		OBJ_105 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* StringExtension.swift */; };
@@ -158,7 +158,7 @@
 		OBJ_43 /* VersionCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCommand.swift; sourceTree = "<group>"; };
 		OBJ_44 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/borinschiivan/Desktop/Prefix/.build/checkouts/SwiftCLI-8466703425035036135/Package.swift"; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* Prefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefix.swift; sourceTree = "<group>"; };
+		OBJ_9 /* PrefixFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixFiles.swift; sourceTree = "<group>"; };
 		"Prefix::Prefix::Product" /* Prefix */ = {isa = PBXFileReference; lastKnownFileType = text; path = Prefix; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Prefix::PrefixCore::Product" /* PrefixCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PrefixCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Prefix::PrefixTests::Product" /* PrefixTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrefixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,7 +330,7 @@
 		OBJ_8 /* PrefixCore */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* Prefix.swift */,
+				OBJ_9 /* PrefixFiles.swift */,
 				OBJ_10 /* PrefixParser.swift */,
 				OBJ_11 /* PrefixTypedValue.swift */,
 				OBJ_12 /* StringExtension.swift */,
@@ -510,7 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_102 /* Prefix.swift in Sources */,
+				OBJ_102 /* PrefixFiles.swift in Sources */,
 				OBJ_103 /* PrefixParser.swift in Sources */,
 				OBJ_104 /* PrefixTypedValue.swift in Sources */,
 				OBJ_105 /* StringExtension.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Typed value struct
 public struct PrefixTypedValue<Tag, Type: Hashable>: Hashable {
     
     public var value: Type

@@ -9,8 +9,8 @@ import Foundation
 
 public extension String {
     
-    public func match(_ word: String) -> Bool {
-        return self.contains(PrefixParser.mathWord(word))
+    public func contain(_ word: String) -> Bool {
+        return self.contains(PrefixParser.containWord(word))
     }
     
     public func contains(_ pattern: PrefixParserPattern) -> Bool {
