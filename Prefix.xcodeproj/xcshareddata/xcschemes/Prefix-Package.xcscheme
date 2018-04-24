@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Prefix::PrefixCore"
+               BuildableName = "PrefixCore.framework"
+               BlueprintName = "PrefixCore"
+               ReferencedContainer = "container:Prefix.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "Files::Files"
                BuildableName = "Files.framework"
                BlueprintName = "Files"
@@ -57,6 +71,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Prefix::PrefixTests"
+               BuildableName = "PrefixTests.xctest"
+               BlueprintName = "PrefixTests"
+               ReferencedContainer = "container:Prefix.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <AdditionalOptions>
       </AdditionalOptions>

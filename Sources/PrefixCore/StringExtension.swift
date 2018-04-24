@@ -7,9 +7,13 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
-    func contain(pattern: PrefixParserPattern) -> Bool {
+    public func match(_ word: String) -> Bool {
+        return self.contains(PrefixParser.mathWord(word))
+    }
+    
+    public func contains(_ pattern: PrefixParserPattern) -> Bool {
         if !PrefixParser.getElements(from: self, with: pattern, range: NSMakeRange(0, self.count)).isEmpty {
             return true
         }

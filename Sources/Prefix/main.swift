@@ -12,7 +12,9 @@
 //greeter.commands = [GreetCommand()]
 //_ = greeter.go()
 
-let prefix = Prefix()
-let files = prefix.getFiles()
+import PrefixCore
 
-print(files)
+let prefix = Prefix()
+let files = prefix.getFilesFromCurrentFolder()
+
+print(files ?? "no files found")

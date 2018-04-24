@@ -10,9 +10,13 @@ import Foundation
 public enum PrefixParserPatternTag {}
 public typealias PrefixParserPattern = PrefixTypedValue<PrefixParserPatternTag, String>
 
-class PrefixParser {
+public class PrefixParser {
     
     private static var cachedRegularExpressions: [String: NSRegularExpression] = [:]
+    
+    static func mathWord(_ word: String) -> PrefixParserPattern {
+        return PrefixParserPattern("(?:\\\(word))")
+    }
     
     static func getElements(from text: String, with pattern: PrefixParserPattern, range: NSRange) -> [NSTextCheckingResult] {
         guard let elementRegex = regularExpression(for: pattern) else { return [] }
