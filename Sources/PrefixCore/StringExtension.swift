@@ -9,8 +9,11 @@ import Foundation
 
 public extension String {
     
-    public func contain(_ word: String) -> Bool {
-        return self.contains(PrefixParser.containWord(word))
+    public func endsWith(_ word: String) -> Bool {
+        let _self = self as NSString
+        let range = NSMakeRange(_self.length - word.count, word.count)
+        let newString = _self.substring(with: range)
+        return newString == word
     }
     
     public func contains(_ pattern: PrefixParserPattern) -> Bool {
