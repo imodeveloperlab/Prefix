@@ -10,6 +10,10 @@ import Foundation
 public enum PrefixParserPatternTag {}
 public typealias PrefixParserPattern = PrefixTypedValue<PrefixParserPatternTag, String>
 
+public let swiftTypeDeclarationsPosibleEnds = [" ", ":", "{"]
+public let swiftTypes = ["class", "protocol", "extension", "enum", "struct"]
+public let swiftPrivateTypes = ["UIView", "UIViewController"]
+
 public class PrefixParser {
     
     private static var cachedRegularExpressions: [String: NSRegularExpression] = [:]
@@ -27,9 +31,13 @@ public class PrefixParser {
     /// - Parameter type: String
     /// - Returns: PrefixParserPattern
     public static func containSwiftTypeDeclarations(_ type: String) -> [PrefixParserPattern] {
-        return [PrefixParserPattern("(?:\(type))(?:\\ )\\w+(?:\\ )"),
-                PrefixParserPattern("(?:\(type))(?:\\ )\\w+(?:\\:)"),
-                PrefixParserPattern("(?:\(type))(?:\\ )\\w+(?:\\{)")]
+        
+        var patterns = [PrefixParserPattern]()
+        for end in swiftTypeDeclarationsPosibleEnds {
+            patterns.append(PrefixParserPattern("(?:\(type))(?:\\ )\\w+(?:\\\(end))"))
+        }
+        
+        return patterns
     }
     
     /// Get elements from string

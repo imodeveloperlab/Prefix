@@ -77,6 +77,86 @@ public extension String {
         return stringsArray
     }
     
+    /// Get all matches from string for array of array of patterns
+    ///
+    /// - Parameter pattern: PrefixParserPattern
+    /// - Returns: Optional array of strings
+    public func getAllMatches(for patterns: [[PrefixParserPattern]]) -> [String] {
+        var stringsArray = [String]()
+        for arrayOfPatterns in patterns {
+            stringsArray.append(contentsOf: getAllMatches(for: arrayOfPatterns))
+        }
+        return stringsArray
+    }
+    
+    /// Get all matches swift declaration type matches from string for array of patterns
+    ///
+    /// - Parameter pattern: PrefixParserPattern
+    /// - Returns: Optional array of strings
+    public func getAllSwitfTypeMatches(for patterns: [PrefixParserPattern], skipPrivate: Bool = false) -> [String] {
+        
+        var stringsArray = [String]()
+        let allMatches = getAllMatches(for: patterns)
+
+        for match in allMatches {
+            
+            if let type = match.toSwiftDecarationType() {
+                
+                if skipPrivate {
+                    
+                    var contains = false
+                    
+                    for privateType in swiftPrivateTypes {
+                        if type.contains(privateType) {
+                            contains = true
+                            continue
+                        }
+                    }
+                    
+                    if !contains {
+                        stringsArray.append(type)
+                    }
+                    
+                } else {
+                    stringsArray.append(type)
+                }
+            }
+        }
+        
+        return stringsArray
+    }
+    
+    /// Get all swift type declarations
+    ///
+    /// - Returns: [String]
+    public func getAllSwitfTypeDeclarations(skipPrivate: Bool = false) -> [String] {
+        
+        var stringsArray = [String]()
+        
+        for type in swiftTypes {
+            
+            let allMatches = getAllSwitfTypeMatches(for: PrefixParser.containSwiftTypeDeclarations(type),
+                                                    skipPrivate: skipPrivate)
+            if !allMatches.isEmpty {
+                stringsArray.append(contentsOf: allMatches)
+            }
+        }
+        
+        return stringsArray
+    }
+    
+    /// Check if string ends with one of swiftTypeDeclarationsPosibleEnds and try to remove it
+    ///
+    /// - Returns: Optional string
+    func toSwiftDecarationType() -> String? {
+        for end in swiftTypeDeclarationsPosibleEnds {
+            if self.endsWith(end) {
+                return self.subsstring(with: NSMakeRange(0, self.count - end.count))
+            }
+        }
+        return nil
+    }
+    
     /// Substring with NSRange
     ///
     /// - Parameter range: NSRange

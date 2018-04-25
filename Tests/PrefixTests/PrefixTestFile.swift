@@ -52,3 +52,19 @@ protocol prefixTestFileProtocol4 {
 
 protocol prefixTestFileProtocol5{
 }
+
+extension prefixTestFileProtocol5 {
+}
+
+class UIView {
+}
+
+class UIViewController {
+}
+
+extension UIView {
+}
+
+extension UIViewController {
+}
+

@@ -26,10 +26,8 @@ func test() {
         
         for file in files {
             if let content = file.content() {
-                
-                print(content)
-                
-                let matches = content.getAllMatches(for: PrefixParser.containSwiftTypeDeclarations("class"))
+             
+                let matches = content.getAllSwitfTypeDeclarations(skipPrivate: true)
                 print(matches)
             }
         }
