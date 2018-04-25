@@ -35,4 +35,31 @@ public extension File {
         
         return content.getAllSwiftTypeRanges(skipPrivate: skipPrivate)
     }
+    
+    public func prefix(with prefix: String) -> String? {
+        
+        guard var content = self.content() else {
+            return nil
+        }
+        
+        let ranges = content.getAllSwiftTypeRanges(skipPrivate: true)
+        
+        for range in ranges {
+            
+            if let substring = content.subsstring(with: range) {
+                
+                let components = substring.components(separatedBy: " ")
+                
+                let newSubstring = substring.replacingOccurrences(of: " ", with: " \(prefix)")
+                content = content.replacingOccurrences(of: substring, with: newSubstring)
+                
+                print("range = \(range)")
+                print("substring = \(substring)")
+            }
+            
+            
+        }
+        
+        return content
+    }
 }

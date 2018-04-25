@@ -208,7 +208,6 @@ public extension String {
                 }
                 
                 if !alreadyContained && containProperEnd {
-                    print(type)
                     allRanges.append(nsRange)
                 }
             }

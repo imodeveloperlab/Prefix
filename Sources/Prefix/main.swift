@@ -25,7 +25,7 @@ func test() {
         }
         
         for file in files {
-            print(file.getAllSwiftTypeRanges(skipPrivate: true))
+            print(file.prefix(with: "MM"))
         }
         
     } catch {
