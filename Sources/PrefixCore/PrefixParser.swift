@@ -18,8 +18,18 @@ public class PrefixParser {
     ///
     /// - Parameter word: Word to be contained
     /// - Returns: PrefixParserPattern
-    static func containWord(_ word: String) -> PrefixParserPattern {
+    public static func containWord(_ word: String) -> PrefixParserPattern {
         return PrefixParserPattern("(?:\\\(word))")
+    }
+    
+    /// Create contain Swift Type Declaration
+    ///
+    /// - Parameter type: String
+    /// - Returns: PrefixParserPattern
+    public static func containSwiftTypeDeclarations(_ type: String) -> [PrefixParserPattern] {
+        return [PrefixParserPattern("(?:\(type))(?:\\ )\\w+(?:\\ )"),
+                PrefixParserPattern("(?:\(type))(?:\\ )\\w+(?:\\:)"),
+                PrefixParserPattern("(?:\(type))(?:\\ )\\w+(?:\\{)")]
     }
     
     /// Get elements from string
@@ -29,7 +39,10 @@ public class PrefixParser {
     ///   - pattern: PrefixParserPattern
     ///   - range: NSRange
     /// - Returns: [NSTextCheckingResult]
-    static func getElements(from text: String, with pattern: PrefixParserPattern, range: NSRange) -> [NSTextCheckingResult] {
+    static func getElements(from text: String,
+                            with pattern: PrefixParserPattern,
+                            range: NSRange) -> [NSTextCheckingResult] {
+        
         guard let elementRegex = regularExpression(for: pattern) else { return [] }
         return elementRegex.matches(in: text, options: [], range: range)
     }
@@ -39,6 +52,7 @@ public class PrefixParser {
     /// - Parameter pattern: PrefixParserPattern
     /// - Returns: NSRegularExpression?
     private static func regularExpression(for pattern: PrefixParserPattern) -> NSRegularExpression? {
+        
         if let regex = cachedRegularExpressions[pattern.value] {
             return regex
         } else if let createdRegex = try? NSRegularExpression(pattern: pattern.value, options: [.caseInsensitive]) {

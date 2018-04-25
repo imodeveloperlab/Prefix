@@ -21,6 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		410D4032208F771B0001F0DE /* FileExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D4030208F76140001F0DE /* FileExtension.swift */; };
+		410D4061209093FB0001F0DE /* PrefixTestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D405F20908E200001F0DE /* PrefixTestFile.swift */; };
+		410D4065209095AE0001F0DE /* PrefixTestFile.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 410D405F20908E200001F0DE /* PrefixTestFile.swift */; };
+		410D406720909AE00001F0DE /* PrefixStringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D406620909AE00001F0DE /* PrefixStringExtensionTests.swift */; };
 		OBJ_102 /* PrefixFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* PrefixFiles.swift */; };
 		OBJ_103 /* PrefixParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* PrefixParser.swift */; };
 		OBJ_104 /* PrefixTypedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* PrefixTypedValue.swift */; };
@@ -55,7 +59,6 @@
 		OBJ_76 /* PrefixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Prefix::PrefixCore::Product" /* PrefixCore.framework */; };
 		OBJ_77 /* Files.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Files::Files::Product" /* Files.framework */; };
 		OBJ_78 /* SwiftCLI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCLI::SwiftCLI::Product" /* SwiftCLI.framework */; };
-		OBJ_90 /* PrefixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* PrefixTests.swift */; };
 		OBJ_92 /* PrefixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Prefix::PrefixCore::Product" /* PrefixCore.framework */; };
 		OBJ_93 /* Files.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Files::Files::Product" /* Files.framework */; };
 		OBJ_94 /* SwiftCLI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftCLI::SwiftCLI::Product" /* SwiftCLI.framework */; };
@@ -127,13 +130,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		410D4064209095A60001F0DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				410D4065209095AE0001F0DE /* PrefixTestFile.swift in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		410D4030208F76140001F0DE /* FileExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExtension.swift; sourceTree = "<group>"; };
+		410D405F20908E200001F0DE /* PrefixTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixTestFile.swift; sourceTree = "<group>"; };
+		410D406620909AE00001F0DE /* PrefixStringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixStringExtensionTests.swift; sourceTree = "<group>"; };
 		"Files::Files::Product" /* Files.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Files.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* PrefixParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixParser.swift; sourceTree = "<group>"; };
 		OBJ_11 /* PrefixTypedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixTypedValue.swift; sourceTree = "<group>"; };
 		OBJ_12 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		OBJ_14 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		OBJ_17 /* PrefixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixTests.swift; sourceTree = "<group>"; };
 		OBJ_20 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/borinschiivan/Desktop/Prefix/.build/checkouts/Files.git-6739420172119258925/Package.swift"; sourceTree = "<group>"; };
 		OBJ_21 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		OBJ_24 /* ArgumentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentList.swift; sourceTree = "<group>"; };
@@ -232,7 +250,8 @@
 		OBJ_16 /* PrefixTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_17 /* PrefixTests.swift */,
+				410D405F20908E200001F0DE /* PrefixTestFile.swift */,
+				410D406620909AE00001F0DE /* PrefixStringExtensionTests.swift */,
 			);
 			name = PrefixTests;
 			path = Tests/PrefixTests;
@@ -306,7 +325,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -315,7 +334,6 @@
 				OBJ_18 /* Dependencies */,
 				OBJ_45 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -334,6 +352,7 @@
 				OBJ_10 /* PrefixParser.swift */,
 				OBJ_11 /* PrefixTypedValue.swift */,
 				OBJ_12 /* StringExtension.swift */,
+				410D4030208F76140001F0DE /* FileExtension.swift */,
 			);
 			name = PrefixCore;
 			path = Sources/PrefixCore;
@@ -413,6 +432,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_86 /* Build configuration list for PBXNativeTarget "PrefixTests" */;
 			buildPhases = (
+				410D4064209095A60001F0DE /* CopyFiles */,
 				OBJ_89 /* Sources */,
 				OBJ_91 /* Frameworks */,
 			);
@@ -487,7 +507,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -511,6 +531,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_102 /* PrefixFiles.swift in Sources */,
+				410D4032208F771B0001F0DE /* FileExtension.swift in Sources */,
 				OBJ_103 /* PrefixParser.swift in Sources */,
 				OBJ_104 /* PrefixTypedValue.swift in Sources */,
 				OBJ_105 /* StringExtension.swift in Sources */,
@@ -588,7 +609,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_90 /* PrefixTests.swift in Sources */,
+				410D4061209093FB0001F0DE /* PrefixTestFile.swift in Sources */,
+				410D406720909AE00001F0DE /* PrefixStringExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

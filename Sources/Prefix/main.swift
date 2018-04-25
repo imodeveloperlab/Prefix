@@ -15,7 +15,28 @@
 import PrefixCore
 import Files
 
-let prefix = PrefixFiles()
-let files = prefix.getAllSwiftFiles(folder: try Folder.home.subfolder(named: "PrefixTest"))
+func test() {
 
-print(files ?? "no files found")
+    let prefix = PrefixFiles()
+    
+    do {
+        guard let files = prefix.getAllSwiftFiles(folder: try Folder.home.subfolder(named: "PrefixTest")) else {
+            return
+        }
+        
+        for file in files {
+            if let content = file.content() {
+                
+                print(content)
+                
+                let matches = content.getAllMatches(for: PrefixParser.containSwiftTypeDeclarations("class"))
+                print(matches)
+            }
+        }
+        
+    } catch {
+        print(error)
+    }
+}
+
+test()
