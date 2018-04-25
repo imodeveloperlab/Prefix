@@ -33,6 +33,6 @@ public extension File {
             return nil
         }
         
-        return content.getAllSwiftTypeRanges()
+        return content.getAllSwiftTypeRanges(skipPrivate: skipPrivate)
     }
 }

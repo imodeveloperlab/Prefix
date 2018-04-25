@@ -106,10 +106,7 @@ class PrefixStringExtensionTests: XCTestCase {
         
         let testFile = PrefixTestFile()
         XCTAssertNotNil(testFile.content())
-        
         let ranges = testFile.content()?.getAllSwiftTypeRanges()
-        print(ranges)
-        
         XCTAssertEqual(ranges?.count, 10)
     }
 }

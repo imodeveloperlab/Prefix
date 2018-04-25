@@ -181,11 +181,11 @@ public extension String {
         return ranges
     }
     
-    public func getAllSwiftTypeRanges() -> [NSRange] {
+    public func getAllSwiftTypeRanges(skipPrivate: Bool = false) -> [NSRange] {
         
         var allRanges = [NSRange]()
 
-        for type in getAllSwitfTypeDeclarations(skipPrivate: true) {
+        for type in getAllSwitfTypeDeclarations(skipPrivate: skipPrivate) {
             for range in self.ranges(of: type) {
                 
                 var alreadyContained = false
