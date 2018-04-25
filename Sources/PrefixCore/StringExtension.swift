@@ -45,7 +45,7 @@ public extension String {
         
         return false
     }
-
+    
     /// Get all matches from string
     ///
     /// - Parameter pattern: PrefixParserPattern
@@ -97,7 +97,7 @@ public extension String {
         
         var stringsArray = [String]()
         let allMatches = getAllMatches(for: patterns)
-
+        
         for match in allMatches {
             
             if let type = match.toSwiftDecarationType() {
@@ -166,4 +166,60 @@ public extension String {
         return string.substring(with: range)
     }
     
+    /// Get ranges from string
+    ///
+    /// - Parameters:
+    ///   - substring: Substring to search
+    ///   - options: CompareOptions
+    ///   - locale: Locale
+    /// - Returns: [Range<Index>]
+    func ranges(of substring: String, options: CompareOptions = [], locale: Locale? = nil) -> [Range<Index>] {
+        var ranges: [Range<Index>] = []
+        while let range = self.range(of: substring, options: options, range: (ranges.last?.upperBound ?? self.startIndex)..<self.endIndex, locale: locale) {
+            ranges.append(range)
+        }
+        return ranges
+    }
+    
+    public func getAllSwiftTypeRanges() -> [NSRange] {
+        
+        var allRanges = [NSRange]()
+
+        for type in getAllSwitfTypeDeclarations(skipPrivate: true) {
+            for range in self.ranges(of: type) {
+                
+                var alreadyContained = false
+                
+                let nsRange = type.nsRange(from: range)
+                
+                for knownRange in allRanges {
+                    if knownRange.location == nsRange.location &&
+                        knownRange.length == nsRange.length {
+                        alreadyContained = true
+                    }
+                }
+                
+                var containProperEnd = false
+                for end in swiftTypeDeclarationsPosibleEnds {
+                    let checkRange = NSMakeRange(nsRange.location + nsRange.length, end.count)
+                    if self.subsstring(with: checkRange) == end {
+                        containProperEnd = true
+                    }
+                }
+                
+                if !alreadyContained && containProperEnd {
+                    print(type)
+                    allRanges.append(nsRange)
+                }
+            }
+        }
+        
+        return allRanges
+    }
+}
+
+extension StringProtocol where Index == String.Index {
+    func nsRange(from range: Range<Index>) -> NSRange {
+        return NSRange(range, in: self)
+    }
 }

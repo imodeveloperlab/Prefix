@@ -95,5 +95,21 @@ class PrefixStringExtensionTests: XCTestCase {
         for end in swiftTypeDeclarationsPosibleEnds {
             XCTAssertNotEqual("class SomeClass\(end)abc".toSwiftDecarationType(), "class SomeClass")
         }
-    }    
+    }
+    
+    func testRanges() {
+        let string = "class ImoTableView {} class ImoTableView {} class ImoTableView {}"
+        XCTAssertEqual(string.ranges(of: "class").count, 3)
+    }
+    
+    func testGetAllSwiftTypeRanges() {
+        
+        let testFile = PrefixTestFile()
+        XCTAssertNotNil(testFile.content())
+        
+        let ranges = testFile.content()?.getAllSwiftTypeRanges()
+        print(ranges)
+        
+        XCTAssertEqual(ranges?.count, 10)
+    }
 }

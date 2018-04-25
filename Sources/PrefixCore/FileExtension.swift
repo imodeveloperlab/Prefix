@@ -18,36 +18,21 @@ public extension File {
         }
     }
     
-    public func getAllContentRanges(for pattern: PrefixParserPattern) -> [NSRange]? {
+    public func getAllSwitfTypeDeclarations(skipPrivate: Bool = false) -> [String]? {
         
         guard let content = self.content() else {
             return nil
         }
         
-        return nil
+        return content.getAllSwitfTypeDeclarations(skipPrivate: true)
+    }
+    
+    public func getAllSwiftTypeRanges(skipPrivate: Bool = false) -> [NSRange]? {
         
-//        var count = 0
-//        let length = content.count
-//        var range = NSMakeRange(0, length)
-//        let string = content as NSString
-//
-//
-//        while(range.location != NSNotFound) {
-//
-//
-//
-//            content.range(of: <#T##StringProtocol#>, options: <#T##String.CompareOptions#>, range: <#T##Range<String.Index>?#>, locale: <#T##Locale?#>)
-//
-//            range = [[mutableAttributedString string] rangeOfString:word options:0 range:range];
-//            if(range.location != NSNotFound) {
-//                [mutableAttributedString setTextColor:color range:NSMakeRange(range.location, [word length])];
-//                range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
-//                count++;
-//            }
-//        }
-//
-//        return mutableAttributedString;
-//
-//        return nil
+        guard let content = self.content() else {
+            return nil
+        }
+        
+        return content.getAllSwiftTypeRanges()
     }
 }

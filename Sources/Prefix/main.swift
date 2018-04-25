@@ -25,11 +25,7 @@ func test() {
         }
         
         for file in files {
-            if let content = file.content() {
-             
-                let matches = content.getAllSwitfTypeDeclarations(skipPrivate: true)
-                print(matches)
-            }
+            print(file.getAllSwiftTypeRanges(skipPrivate: true))
         }
         
     } catch {

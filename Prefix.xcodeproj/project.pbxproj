@@ -26,6 +26,7 @@
 		410D4065209095AE0001F0DE /* PrefixTestFile.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 410D405F20908E200001F0DE /* PrefixTestFile.swift */; };
 		410D406720909AE00001F0DE /* PrefixStringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D406620909AE00001F0DE /* PrefixStringExtensionTests.swift */; };
 		410D40692090C4AE0001F0DE /* PrefixParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D40682090C4AE0001F0DE /* PrefixParserTests.swift */; };
+		410D406B2090D0870001F0DE /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D406A2090D0870001F0DE /* NSRangeExtension.swift */; };
 		OBJ_102 /* PrefixFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* PrefixFiles.swift */; };
 		OBJ_103 /* PrefixParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* PrefixParser.swift */; };
 		OBJ_104 /* PrefixTypedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* PrefixTypedValue.swift */; };
@@ -149,6 +150,7 @@
 		410D405F20908E200001F0DE /* PrefixTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixTestFile.swift; sourceTree = "<group>"; };
 		410D406620909AE00001F0DE /* PrefixStringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixStringExtensionTests.swift; sourceTree = "<group>"; };
 		410D40682090C4AE0001F0DE /* PrefixParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixParserTests.swift; sourceTree = "<group>"; };
+		410D406A2090D0870001F0DE /* NSRangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
 		"Files::Files::Product" /* Files.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Files.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* PrefixParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixParser.swift; sourceTree = "<group>"; };
 		OBJ_11 /* PrefixTypedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixTypedValue.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				OBJ_10 /* PrefixParser.swift */,
 				OBJ_11 /* PrefixTypedValue.swift */,
 				OBJ_12 /* StringExtension.swift */,
+				410D406A2090D0870001F0DE /* NSRangeExtension.swift */,
 				410D4030208F76140001F0DE /* FileExtension.swift */,
 			);
 			name = PrefixCore;
@@ -612,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				410D406B2090D0870001F0DE /* NSRangeExtension.swift in Sources */,
 				410D40692090C4AE0001F0DE /* PrefixParserTests.swift in Sources */,
 				410D4061209093FB0001F0DE /* PrefixTestFile.swift in Sources */,
 				410D406720909AE00001F0DE /* PrefixStringExtensionTests.swift in Sources */,
