@@ -47,7 +47,7 @@ public class PrefixParser {
     ///   - pattern: PrefixParserPattern
     ///   - range: NSRange
     /// - Returns: [NSTextCheckingResult]
-    static func getElements(from text: String,
+    public static func getElements(from text: String,
                             with pattern: PrefixParserPattern,
                             range: NSRange) -> [NSTextCheckingResult] {
         
@@ -59,7 +59,7 @@ public class PrefixParser {
     ///
     /// - Parameter pattern: PrefixParserPattern
     /// - Returns: NSRegularExpression?
-    private static func regularExpression(for pattern: PrefixParserPattern) -> NSRegularExpression? {
+    public static func regularExpression(for pattern: PrefixParserPattern) -> NSRegularExpression? {
         
         if let regex = cachedRegularExpressions[pattern.value] {
             return regex
