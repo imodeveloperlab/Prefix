@@ -14,18 +14,41 @@
 
 import PrefixCore
 import Files
+import Foundation
 
 func test() {
 
     let prefix = PrefixFiles()
     
     do {
-        guard let files = prefix.getAllSwiftFiles(folder: try Folder.home.subfolder(named: "PrefixTest")) else {
+        
+        let mainFolder = try Folder.home.subfolder(named: "PrefixTest")
+        
+        //CREATE CONVERTED FOLDER IF NOT EXIST
+        if !mainFolder.containsSubfolder(named: "Converted") {
+            try mainFolder.createSubfolder(named: "Converted")
+        }
+        
+        let convertedFolder = try mainFolder.subfolder(named: "Converted")
+        
+        //DELETE ALL FILES FROM CONVERTED FOLDER
+        guard let filesToDelete = prefix.getAllSwiftFiles(folder: convertedFolder) else {
+            return
+        }
+        
+        for file in filesToDelete {
+            try file.delete()
+        }
+
+        //GET ALL FILES FROM MAIN FOLDER
+        guard let files = prefix.getAllSwiftFiles(folder: mainFolder) else {
             return
         }
         
         for file in files {
-            print(file.prefix(with: "MM"))
+            if let content = file.prefix(with: "MM") {
+                try convertedFolder.createFile(named: "MM\(file.name)", contents: content)
+            }
         }
         
     } catch {

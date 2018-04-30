@@ -104,16 +104,16 @@ public extension String {
                 
                 if skipPrivate {
                     
-                    var contains = false
+                    var containsPrivateType = false
                     
                     for privateType in swiftPrivateTypes {
                         if type.contains(privateType) {
-                            contains = true
+                            containsPrivateType = true
                             continue
                         }
                     }
                     
-                    if !contains {
+                    if !containsPrivateType {
                         stringsArray.append(type)
                     }
                     
@@ -151,7 +151,21 @@ public extension String {
     func toSwiftDecarationType() -> String? {
         for end in swiftTypeDeclarationsPosibleEnds {
             if self.endsWith(end) {
-                return self.subsstring(with: NSMakeRange(0, self.count - end.count))
+                if let swiftType = self.subsstring(with: NSMakeRange(0, self.count - end.count)) {
+                    
+                    let swiftTypeComponnents = swiftType.components(separatedBy: " ")
+                    
+                    //IF WE HAVE COMPONENTS
+                    if swiftTypeComponnents.count == 2 {
+                        
+                        //AND COMPONENTS ARE NOT LOWERCASED
+                        if swiftTypeComponnents[1] != swiftTypeComponnents[1].lowercased() {
+                            
+                            //WE RETURN IT AS SWIFT TYPE
+                            return swiftType
+                        }
+                    }
+                }
             }
         }
         return nil
@@ -179,6 +193,39 @@ public extension String {
             ranges.append(range)
         }
         return ranges
+    }
+    
+    func getAllRanges(for string: String) -> [NSRange] {
+        
+        var allRanges = [NSRange]()
+        
+        for range in self.ranges(of: string) {
+            
+            var alreadyContained = false
+            
+            let nsRange = string.nsRange(from: range)
+            
+            for knownRange in allRanges {
+                if knownRange.location == nsRange.location &&
+                    knownRange.length == nsRange.length {
+                    alreadyContained = true
+                }
+            }
+            
+            var containProperEnd = false
+            for end in swiftTypeDeclarationsPosibleEnds {
+                let checkRange = NSMakeRange(nsRange.location + nsRange.length, end.count)
+                if self.subsstring(with: checkRange) == end {
+                    containProperEnd = true
+                }
+            }
+            
+            if !alreadyContained && containProperEnd {
+                allRanges.append(nsRange)
+            }
+        }
+        
+        return allRanges
     }
     
     public func getAllSwiftTypeRanges(skipPrivate: Bool = false) -> [NSRange] {

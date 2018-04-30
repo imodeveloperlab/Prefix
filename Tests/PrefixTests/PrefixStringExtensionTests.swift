@@ -77,14 +77,14 @@ class PrefixStringExtensionTests: XCTestCase {
         
         let testFile = PrefixTestFile()
         XCTAssertNotNil(testFile.content())
-        XCTAssertEqual(testFile.content()?.getAllSwitfTypeDeclarations().count, 14)
+        XCTAssertEqual(testFile.content()?.getAllSwitfTypeDeclarations().count, 12)
     }
     
     func testGetAllSwitfTypeDeclarationsSkipPrivate() {
         
         let testFile = PrefixTestFile()
         XCTAssertNotNil(testFile.content())
-        XCTAssertEqual(testFile.content()?.getAllSwitfTypeDeclarations(skipPrivate: true).count, 10)
+        XCTAssertEqual(testFile.content()?.getAllSwitfTypeDeclarations(skipPrivate: true).count, 8)
     }
     
     func testToSwiftDecarationType() {
@@ -107,6 +107,6 @@ class PrefixStringExtensionTests: XCTestCase {
         let testFile = PrefixTestFile()
         XCTAssertNotNil(testFile.content())
         let ranges = testFile.content()?.getAllSwiftTypeRanges()
-        XCTAssertEqual(ranges?.count, 10)
+        XCTAssertEqual(ranges?.count, 12)
     }
 }

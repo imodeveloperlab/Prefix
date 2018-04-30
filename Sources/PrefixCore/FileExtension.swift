@@ -38,26 +38,29 @@ public extension File {
     
     public func prefix(with prefix: String) -> String? {
         
-        guard var content = self.content() else {
+        guard var content = self.content(),
+              let types = getAllSwitfTypeDeclarations(skipPrivate: true) else {
             return nil
         }
         
-        let ranges = content.getAllSwiftTypeRanges(skipPrivate: true)
+        print("Found types: \(types)")
         
-        for range in ranges {
+        for type in types {
             
-            if let substring = content.subsstring(with: range) {
+            let components = type.components(separatedBy: " ")
+            
+            if components.count == 2 {
                 
-                let components = substring.components(separatedBy: " ")
+                let ranges = content.getAllRanges(for: components[1])
                 
-                let newSubstring = substring.replacingOccurrences(of: " ", with: " \(prefix)")
-                content = content.replacingOccurrences(of: substring, with: newSubstring)
-                
-                print("range = \(range)")
-                print("substring = \(substring)")
+                for range in ranges {
+                    
+                    if let substring = content.subsstring(with: range) {
+                        
+                        content = content.replacingOccurrences(of: substring, with: "\(prefix)\(substring)")
+                    }
+                }
             }
-            
-            
         }
         
         return content
