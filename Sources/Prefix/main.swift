@@ -45,12 +45,53 @@ func test() {
             return
         }
         
+        var allPossibleTypes = [String]()
+        
         for file in files {
-            if let content = file.prefix(with: "MM") {
-                try convertedFolder.createFile(named: "MM\(file.name)", contents: content)
+            
+            guard let content = file.content() else {
+                   continue
             }
+            
+            allPossibleTypes.append(contentsOf: content.getAllSwitfTypeDeclarations(skipPrivate: true))
         }
         
+        print(allPossibleTypes)
+        
+        let newPrefix = "MM"
+        
+        for file in files {
+            
+            guard var content = file.content() else {
+                continue
+            }
+            
+            for type in allPossibleTypes {
+                
+                let components = type.components(separatedBy: " ")
+                
+                if components.count == 2 {
+                    
+                    let replace = components[1]
+                    let with = "MM\(components[1])"
+                    
+                    print("\(replace) with \(with)")
+                    
+                    if let checkRange = content.range(of: replace) {
+                        let nsRange = content.nsRange(from: checkRange)
+                        let substring = content.subsstring(with: NSMakeRange(nsRange.location - newPrefix.count, newPrefix.count))
+                        
+                        if substring == newPrefix {
+                            continue
+                        }
+                    }
+                    
+                    content = content.replacingOccurrences(of: replace, with: with)
+                    try convertedFolder.createFile(named: "MM\(file.name)", contents: content)
+                }
+            }
+        }
+
     } catch {
         print(error)
     }

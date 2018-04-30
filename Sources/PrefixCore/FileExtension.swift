@@ -43,23 +43,21 @@ public extension File {
             return nil
         }
         
-        print("Found types: \(types)")
-        
         for type in types {
             
             let components = type.components(separatedBy: " ")
             
             if components.count == 2 {
                 
-                let ranges = content.getAllRanges(for: components[1])
+                let replace = components[1]
+                let with = "\(prefix)\(components[1])"
                 
-                for range in ranges {
-                    
-                    if let substring = content.subsstring(with: range) {
-                        
-                        content = content.replacingOccurrences(of: substring, with: "\(prefix)\(substring)")
-                    }
-                }
+                print("\(replace) with \(with)")
+                
+                let ranges = content.getAllRanges(for: components[1])
+
+                content = content.replacingOccurrences(of: replace, with: with)
+                print(content)
             }
         }
         

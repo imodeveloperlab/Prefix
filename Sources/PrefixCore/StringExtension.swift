@@ -264,8 +264,8 @@ public extension String {
     }
 }
 
-extension StringProtocol where Index == String.Index {
-    func nsRange(from range: Range<Index>) -> NSRange {
+public extension StringProtocol where Index == String.Index {
+    public func nsRange(from range: Range<Index>) -> NSRange {
         return NSRange(range, in: self)
     }
 }

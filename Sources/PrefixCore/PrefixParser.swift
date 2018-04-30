@@ -10,7 +10,7 @@ import Foundation
 public enum PrefixParserPatternTag {}
 public typealias PrefixParserPattern = PrefixTypedValue<PrefixParserPatternTag, String>
 
-public let swiftTypeDeclarationsPosibleEnds = [" ", ":", "{"]
+public let swiftTypeDeclarationsPosibleEnds = [" ", ":", "{", "?"]
 public let swiftTypes = ["class", "protocol", "extension", "enum", "struct"]
 public let swiftPrivateTypes = ["UIView", "UIViewController"]
 
