@@ -12,7 +12,7 @@ public typealias PrefixParserPattern = PrefixTypedValue<PrefixParserPatternTag, 
 
 public let swiftTypeDeclarationsPosibleEnds = [" ", ":", "{", "?"]
 public let swiftTypes = ["class", "protocol", "extension", "enum", "struct"]
-public let swiftPrivateTypes = ["UIView", "UIViewController"]
+public let swiftPrivateTypes = ["UIView", "UIViewController", "String", "NSRegularExpression"]
 
 public class PrefixParser {
     

@@ -262,6 +262,19 @@ public extension String {
         
         return allRanges
     }
+    
+    public func toPrefix() -> String {
+        
+        let letters = filter() { ("A"..."Z").contains($0) }
+        
+        var prefix = ""
+        
+        for letter in letters {
+            prefix.append(letter)
+        }
+        
+        return prefix
+    }
 }
 
 public extension StringProtocol where Index == String.Index {

@@ -97,4 +97,46 @@ func test() {
     }
 }
 
-test()
+//test()
+
+func getFrameworks() -> [PrefixFramework] {
+    
+    let imoTableView = PrefixFramework(originalName: "ImoTableView",
+                                       finalName: "ImoTableView",
+                                       fromPath: "ImoTableView/ImoTableView/")
+    
+    let activeLabel = PrefixFramework(originalName: "ActiveLabel.swift",
+                                      finalName: "ActiveLabel",
+                                      fromPath: "ActiveLabel")
+    
+    let phoneNumberKit = PrefixFramework(originalName: "PhoneNumberKit",
+                                         finalName: "PhoneNumberKit",
+                                         fromPath: "PhoneNumberKit")
+
+    return [imoTableView, activeLabel, phoneNumberKit]
+}
+
+func test2() {
+    
+    let refactor = PrefixRefactor()
+    
+    for framework in getFrameworks() {
+        
+        do {
+            
+            let mainFolder = try Folder.home.subfolder(named: "PrefixTest")
+            try framework.clearDestinationFolder(root: mainFolder)
+            let from = try framework.fromFolder(with: mainFolder)
+            let to = try framework.toFolder(with: mainFolder)
+            try refactor.prefix(prefix: framework.finalName.toPrefix(), from: from, to: to)
+            
+        } catch {
+            print("error: \(error)")
+        }
+    }
+}
+
+test2()
+
+
+
