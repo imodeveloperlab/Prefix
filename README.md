@@ -1,9 +1,11 @@
 # Prefix
 Prefix is an command line tool app which helps with adding prefix to an swift file which contains defined swift types class, protocol, extension, enum, struct and adding to them wanted **Prefix**.
 
-#### Build and Install
+#### Clone, Build and Install
 
 ```
+$ git clone git@github.com:imodeveloperlab/Prefix.git
+$ cd Prefix
 $ swift build -c release -Xswiftc -static-stdlib
 $ cd .build/x86_64-apple-macosx10.10/release
 $ cp -f Prefix /usr/local/bin/prefix
