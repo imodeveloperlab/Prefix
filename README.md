@@ -1,5 +1,5 @@
 # Prefix
-Prefix is an command line tool app which helps with adding prefix to an swift file which contains defined classes enums tructs and so on and adding to them wanted prefix.
+Prefix is an command line tool app which helps with adding prefix to an swift file which contains defined swift types class, protocol, extension, enum, struct and adding to them wanted **Prefix**.
 
 #### Build and Install
 
