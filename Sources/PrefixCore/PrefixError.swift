@@ -10,7 +10,6 @@ import Foundation
 public enum PrefixError: Error {
     
     case `default`(message: String)
-    
     public init(message: String) {
         self = .`default`(message: message)
     }

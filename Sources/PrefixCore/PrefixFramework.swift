@@ -9,9 +9,9 @@ import Foundation
 
 public struct PrefixFramework {
     
-    var originalName: String
-    var finalName: String
-    var fromPath: String
+    public var originalName: String
+    public var finalName: String
+    public var fromPath: String
     
     public init(originalName: String,
                 finalName: String,

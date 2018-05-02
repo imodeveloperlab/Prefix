@@ -6,17 +6,16 @@
 //
 
 import Files
-import PrefixCore
 
-extension PrefixFramework {
+public extension PrefixFramework {
     
-    func fromFolder(with root: Folder) throws -> Folder {
+    public func fromFolder(with root: Folder) throws -> Folder {
         let from = try root.subfolder(named: "from")
         let folder = try from.subfolder(atPath: "\(originalName)/\(fromPath)")
         return folder
     }
     
-    func clearDestinationFolder(root: Folder) throws {
+    public func clearDestinationFolder(root: Folder) throws {
         
         let to = try root.subfolder(named: "to")
         
@@ -32,7 +31,7 @@ extension PrefixFramework {
         }
     }
     
-    func toFolder(with root: Folder) throws -> Folder {
+    public func toFolder(with root: Folder) throws -> Folder {
         
         let to = try root.subfolder(named: "to")
         

@@ -26,10 +26,8 @@
 		410D4065209095AE0001F0DE /* PrefixTestFile.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 410D405F20908E200001F0DE /* PrefixTestFile.swift */; };
 		410D406720909AE00001F0DE /* PrefixStringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D406620909AE00001F0DE /* PrefixStringExtensionTests.swift */; };
 		410D40692090C4AE0001F0DE /* PrefixParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D40682090C4AE0001F0DE /* PrefixParserTests.swift */; };
-		410D406B2090D0870001F0DE /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D406A2090D0870001F0DE /* NSRangeExtension.swift */; };
-		414D10C82097763A00B77747 /* PrefixFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D10C62097750000B77747 /* PrefixFramework.swift */; };
-		414D10CB2097783400B77747 /* PrefixFrameworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D10C92097777500B77747 /* PrefixFrameworkExtension.swift */; };
-		414D10CE209779EE00B77747 /* FolderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D10CC209779A200B77747 /* FolderExtension.swift */; };
+		4114EB47209A15660025E1ED /* PrefixFrameworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D10C92097777500B77747 /* PrefixFrameworkExtension.swift */; };
+		4114EB48209A15700025E1ED /* PrefixFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D10C62097750000B77747 /* PrefixFramework.swift */; };
 		41B2136D20988ED000172FDB /* PrefixRefactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2136A20988E8600172FDB /* PrefixRefactor.swift */; };
 		41B2136F20988F3D00172FDB /* PrefixError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2136E20988F3D00172FDB /* PrefixError.swift */; };
 		OBJ_102 /* PrefixFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* PrefixFiles.swift */; };
@@ -155,10 +153,8 @@
 		410D405F20908E200001F0DE /* PrefixTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixTestFile.swift; sourceTree = "<group>"; };
 		410D406620909AE00001F0DE /* PrefixStringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixStringExtensionTests.swift; sourceTree = "<group>"; };
 		410D40682090C4AE0001F0DE /* PrefixParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixParserTests.swift; sourceTree = "<group>"; };
-		410D406A2090D0870001F0DE /* NSRangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
 		414D10C62097750000B77747 /* PrefixFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixFramework.swift; sourceTree = "<group>"; };
 		414D10C92097777500B77747 /* PrefixFrameworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixFrameworkExtension.swift; sourceTree = "<group>"; };
-		414D10CC209779A200B77747 /* FolderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderExtension.swift; sourceTree = "<group>"; };
 		41B2136A20988E8600172FDB /* PrefixRefactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixRefactor.swift; sourceTree = "<group>"; };
 		41B2136E20988F3D00172FDB /* PrefixError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixError.swift; sourceTree = "<group>"; };
 		"Files::Files::Product" /* Files.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Files.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,11 +363,9 @@
 				OBJ_10 /* PrefixParser.swift */,
 				OBJ_11 /* PrefixTypedValue.swift */,
 				OBJ_12 /* StringExtension.swift */,
-				410D406A2090D0870001F0DE /* NSRangeExtension.swift */,
 				410D4030208F76140001F0DE /* FileExtension.swift */,
 				414D10C62097750000B77747 /* PrefixFramework.swift */,
 				414D10C92097777500B77747 /* PrefixFrameworkExtension.swift */,
-				414D10CC209779A200B77747 /* FolderExtension.swift */,
 				41B2136A20988E8600172FDB /* PrefixRefactor.swift */,
 				41B2136E20988F3D00172FDB /* PrefixError.swift */,
 			);
@@ -553,9 +547,11 @@
 			files = (
 				OBJ_102 /* PrefixFiles.swift in Sources */,
 				410D4032208F771B0001F0DE /* FileExtension.swift in Sources */,
+				4114EB47209A15660025E1ED /* PrefixFrameworkExtension.swift in Sources */,
 				41B2136F20988F3D00172FDB /* PrefixError.swift in Sources */,
 				OBJ_103 /* PrefixParser.swift in Sources */,
 				41B2136D20988ED000172FDB /* PrefixRefactor.swift in Sources */,
+				4114EB48209A15700025E1ED /* PrefixFramework.swift in Sources */,
 				OBJ_104 /* PrefixTypedValue.swift in Sources */,
 				OBJ_105 /* StringExtension.swift in Sources */,
 			);
@@ -624,10 +620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				414D10C82097763A00B77747 /* PrefixFramework.swift in Sources */,
-				414D10CE209779EE00B77747 /* FolderExtension.swift in Sources */,
 				OBJ_74 /* main.swift in Sources */,
-				414D10CB2097783400B77747 /* PrefixFrameworkExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +628,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				410D406B2090D0870001F0DE /* NSRangeExtension.swift in Sources */,
 				410D40692090C4AE0001F0DE /* PrefixParserTests.swift in Sources */,
 				410D4061209093FB0001F0DE /* PrefixTestFile.swift in Sources */,
 				410D406720909AE00001F0DE /* PrefixStringExtensionTests.swift in Sources */,

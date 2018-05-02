@@ -25,7 +25,6 @@ public final class PrefixTestFile: NSObject {
                 print(filePath.absoluteString)
                 return try String(contentsOf: filePath, encoding: String.Encoding.utf8)
             }
-            
         } catch {
             print(error)
         }
