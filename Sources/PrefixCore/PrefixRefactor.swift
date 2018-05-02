@@ -11,19 +11,21 @@ import Files
 public class PrefixRefactor {
     
     public init() {
-        
     }
     
     public func prefix(prefix: String, from fromFolder: Folder, to toFolder: Folder) throws {
         
+        //STORE ALL POSSIBLE TYPES
         var allPossibleTypes = [String]()
         
-        let files = PrefixFiles()
+        let fileManager = PrefixFiles()
         
-        guard let allFiles = files.getAllSwiftFiles(folder: fromFolder) else {
+        //GET ALL FILES
+        guard let allFiles = fileManager.getAllSwiftFiles(folder: fromFolder) else {
             throw PrefixError(message: "Can't get all swift files")
         }
         
+        //GET ALL SWIFT TYPE DECLARATIONS
         for file in allFiles {
             
             guard let content = file.content() else {
@@ -33,32 +35,29 @@ public class PrefixRefactor {
             allPossibleTypes.append(contentsOf: content.getAllSwitfTypeDeclarations(skipPrivate: true))
         }
         
+        print(allPossibleTypes.onlyTypes())
+        
         for file in allFiles {
             
+            print("Name: \(file.name), Path: \(file.path)")
+            
+            //GET CONTENT FROM FILE
             guard var content = file.content() else {
                 throw PrefixError(message: "Can't get content from \(file.path)")
             }
             
-            for type in allPossibleTypes {
+            //FOR EACH TYPE
+            for type in allPossibleTypes.onlyTypes() {
                 
-                let components = type.components(separatedBy: " ")
+                content.debugRanges(for: type)
                 
-                if components.count == 2 {
-                    
-                    let replace = components[1]
-                    let with = "\(prefix)\(components[1])"
-                    
-                    if let checkRange = content.range(of: replace) {
-                        let nsRange = content.nsRange(from: checkRange)
-                        let substring = content.subsstring(with: NSMakeRange(nsRange.location - prefix.count, prefix.count))
-                        if substring == prefix {
-                            continue
-                        }
-                    }
-                    
-                    content = content.replacingOccurrences(of: replace, with: with)
-                    try toFolder.createFile(named: "\(prefix)\(file.name)", contents: content)
+                for posibleBegin in swiftTypeDeclarationsPosibleBegins {
+                    let search = "\(posibleBegin)\(type)"
+                    let replace = "\(posibleBegin)\(prefix)\(type)"
+                    content = content.replacingOccurrences(of: search, with: replace)
                 }
+                
+                try toFolder.createFile(named: "\(prefix)\(file.name)", contents: content)
             }
         }
     }

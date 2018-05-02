@@ -101,6 +101,10 @@ func test() {
 
 func getFrameworks() -> [PrefixFramework] {
     
+    let alamofire = PrefixFramework(originalName: "Alamofire",
+                                    finalName: "Alamofire",
+                                    fromPath: "Source")
+    
     let imoTableView = PrefixFramework(originalName: "ImoTableView",
                                        finalName: "ImoTableView",
                                        fromPath: "ImoTableView/ImoTableView/")
@@ -113,7 +117,7 @@ func getFrameworks() -> [PrefixFramework] {
                                          finalName: "PhoneNumberKit",
                                          fromPath: "PhoneNumberKit")
 
-    return [imoTableView, activeLabel, phoneNumberKit]
+    return [imoTableView, activeLabel, phoneNumberKit, alamofire]
 }
 
 func test2() {

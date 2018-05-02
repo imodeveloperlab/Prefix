@@ -233,6 +233,7 @@ public extension String {
         var allRanges = [NSRange]()
 
         for type in getAllSwitfTypeDeclarations(skipPrivate: skipPrivate) {
+            
             for range in self.ranges(of: type) {
                 
                 var alreadyContained = false
@@ -263,6 +264,25 @@ public extension String {
         return allRanges
     }
     
+    public func getAllSwiftTypeRanges(skipPrivate: Bool = false, skipPrefix prefix: String) -> [NSRange] {
+        
+        var allRanges = [NSRange]()
+        
+        for range in getAllSwiftTypeRanges(skipPrivate: skipPrivate) {
+            
+            let substring = self.subsstring(with: NSMakeRange(range.location - prefix.count, prefix.count))
+            
+            if substring == prefix {
+                continue
+            }
+            
+            allRanges.append(range)
+            
+        }
+        
+        return allRanges
+    }
+    
     public func toPrefix() -> String {
         
         let letters = filter() { ("A"..."Z").contains($0) }
@@ -275,6 +295,40 @@ public extension String {
         
         return prefix
     }
+    
+    public func debugRanges(for string: String) {
+        
+        let allRanges = self.getAllRanges(for: string)
+        
+        for range in allRanges {
+            if var substring = self.subsstring(with: NSMakeRange(range.location - 5, string.count + 10)) {
+                
+                substring = substring.replacingOccurrences(of: "\n", with: "")
+                
+                print("String: \(string) Range: \(range) Context: \(substring)")
+            }
+        }
+    }
+}
+
+public extension Array where Element == String {
+    
+    public func onlyTypes() -> [String] {
+        
+        var allTypes = [String]()
+        
+        for type in self {
+            
+            let components = type.components(separatedBy: " ")
+            if components.count == 2 {
+                allTypes.append(components[1])
+            }
+        }
+        
+        allTypes = Array(Set(allTypes))
+        return allTypes
+    }
+    
 }
 
 public extension StringProtocol where Index == String.Index {
