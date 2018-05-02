@@ -1,20 +1,49 @@
-//import SwiftCLI
-//
-//class GreetCommand: Command {
-//    let name = "greet"
-//    let person = Parameter()
-//    func execute() throws {
-//        stdout <<< "Hello \(person.value)!"
-//    }
-//}
-//
-//let greeter = CLI(name: "greeter")
-//greeter.commands = [GreetCommand()]
-//_ = greeter.go()
-
+import SwiftCLI
 import PrefixCore
 import Files
 import Foundation
+
+class AddCommand: Command {
+    
+    let name = "add"
+    let prefix = Parameter()
+    
+    func execute() throws {
+        
+        do {
+            let mainFolder = Folder.current
+            let refactor = PrefixRefactor()
+            
+            if !mainFolder.containsSubfolder(named: "\(prefix.value)Prefix") {
+                try mainFolder.createSubfolder(named: "\(prefix.value)Prefix")
+            }
+            
+            let toFolder = try mainFolder.subfolder(atPath: "\(prefix.value)Prefix")
+            
+            if mainFolder.containsSubfolder(named: "\(prefix.value)Prefix") {
+                let destinationFolder = try mainFolder.subfolder(atPath: "\(prefix.value)Prefix")
+                let filesManager = PrefixFiles()
+                if let filesToDelete = filesManager.getFilesFrom(folder: destinationFolder) {
+                    for file in filesToDelete {
+                        try file.delete()
+                    }
+                }
+            }
+            
+            try refactor.prefix(prefix: prefix.value, from: mainFolder, to: toFolder)
+            
+        } catch {
+            print("error: \(error)")
+        }
+        
+        stdout <<< "Done add prefix \(prefix.value)"
+    }
+}
+
+let greeter = CLI(name: "greeter")
+greeter.commands = [AddCommand()]
+_ = greeter.go()
+
 
 func getFrameworks() -> [PrefixFramework] {
     
@@ -33,7 +62,7 @@ func getFrameworks() -> [PrefixFramework] {
     let phoneNumberKit = PrefixFramework(originalName: "PhoneNumberKit",
                                          finalName: "PhoneNumberKit",
                                          fromPath: "PhoneNumberKit")
-
+    
     return [imoTableView, activeLabel, phoneNumberKit, alamofire]
 }
 
@@ -56,8 +85,6 @@ func test2() {
         }
     }
 }
-
-test2()
 
 
 
