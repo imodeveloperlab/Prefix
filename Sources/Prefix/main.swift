@@ -14,14 +14,16 @@ class AddCommand: Command {
             let mainFolder = Folder.current
             let refactor = PrefixRefactor()
             
-            if !mainFolder.containsSubfolder(named: "\(prefix.value)Prefix") {
-                try mainFolder.createSubfolder(named: "\(prefix.value)Prefix")
+            let destinationFolderName = "\(prefix.value)Prefix"
+            
+            if !mainFolder.containsSubfolder(named: destinationFolderName) {
+                try mainFolder.createSubfolder(named: destinationFolderName)
             }
             
-            let toFolder = try mainFolder.subfolder(atPath: "\(prefix.value)Prefix")
+            let toFolder = try mainFolder.subfolder(atPath: destinationFolderName)
             
-            if mainFolder.containsSubfolder(named: "\(prefix.value)Prefix") {
-                let destinationFolder = try mainFolder.subfolder(atPath: "\(prefix.value)Prefix")
+            if mainFolder.containsSubfolder(named: destinationFolderName) {
+                let destinationFolder = try mainFolder.subfolder(atPath: destinationFolderName)
                 let filesManager = PrefixFiles()
                 if let filesToDelete = filesManager.getFilesFrom(folder: destinationFolder) {
                     for file in filesToDelete {
@@ -40,10 +42,9 @@ class AddCommand: Command {
     }
 }
 
-let greeter = CLI(name: "greeter")
-greeter.commands = [AddCommand()]
-_ = greeter.go()
-
+let prefix = CLI(name: "prefix")
+prefix.commands = [AddCommand()]
+_ = prefix.go()
 
 func getFrameworks() -> [PrefixFramework] {
     

@@ -28,6 +28,14 @@
 		410D40692090C4AE0001F0DE /* PrefixParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410D40682090C4AE0001F0DE /* PrefixParserTests.swift */; };
 		4114EB47209A15660025E1ED /* PrefixFrameworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D10C92097777500B77747 /* PrefixFrameworkExtension.swift */; };
 		4114EB48209A15700025E1ED /* PrefixFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D10C62097750000B77747 /* PrefixFramework.swift */; };
+		4114EB50209A42F20025E1ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114EB4F209A42F20025E1ED /* AppDelegate.swift */; };
+		4114EB52209A42F20025E1ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114EB51209A42F20025E1ED /* ViewController.swift */; };
+		4114EB54209A42F20025E1ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4114EB53209A42F20025E1ED /* Assets.xcassets */; };
+		4114EB57209A42F20025E1ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4114EB55209A42F20025E1ED /* Main.storyboard */; };
+		4114EB5D209A430F0025E1ED /* PrefixCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Prefix::PrefixCore::Product" /* PrefixCore.framework */; };
+		4114EB5E209A430F0025E1ED /* PrefixCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "Prefix::PrefixCore::Product" /* PrefixCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4114EB61209A430F0025E1ED /* Files.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Files::Files::Product" /* Files.framework */; };
+		4114EB62209A430F0025E1ED /* Files.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "Files::Files::Product" /* Files.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41B2136D20988ED000172FDB /* PrefixRefactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2136A20988E8600172FDB /* PrefixRefactor.swift */; };
 		41B2136F20988F3D00172FDB /* PrefixError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2136E20988F3D00172FDB /* PrefixError.swift */; };
 		OBJ_102 /* PrefixFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* PrefixFiles.swift */; };
@@ -133,6 +141,20 @@
 			remoteGlobalIDString = "Prefix::PrefixTests";
 			remoteInfo = PrefixTests;
 		};
+		4114EB5F209A430F0025E1ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Prefix::PrefixCore";
+			remoteInfo = PrefixCore;
+		};
+		4114EB63209A430F0025E1ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Files::Files";
+			remoteInfo = Files;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -146,6 +168,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4114EB65209A430F0025E1ED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4114EB62209A430F0025E1ED /* Files.framework in Embed Frameworks */,
+				4114EB5E209A430F0025E1ED /* PrefixCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +187,13 @@
 		410D405F20908E200001F0DE /* PrefixTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixTestFile.swift; sourceTree = "<group>"; };
 		410D406620909AE00001F0DE /* PrefixStringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixStringExtensionTests.swift; sourceTree = "<group>"; };
 		410D40682090C4AE0001F0DE /* PrefixParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixParserTests.swift; sourceTree = "<group>"; };
+		4114EB4D209A42F10025E1ED /* PrefixApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrefixApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4114EB4F209A42F20025E1ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4114EB51209A42F20025E1ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4114EB53209A42F20025E1ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4114EB56209A42F20025E1ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4114EB58209A42F20025E1ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4114EB59209A42F20025E1ED /* PrefixApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrefixApp.entitlements; sourceTree = "<group>"; };
 		414D10C62097750000B77747 /* PrefixFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixFramework.swift; sourceTree = "<group>"; };
 		414D10C92097777500B77747 /* PrefixFrameworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixFrameworkExtension.swift; sourceTree = "<group>"; };
 		41B2136A20988E8600172FDB /* PrefixRefactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixRefactor.swift; sourceTree = "<group>"; };
@@ -194,6 +235,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4114EB4A209A42F10025E1ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4114EB61209A430F0025E1ED /* Files.framework in Frameworks */,
+				4114EB5D209A430F0025E1ED /* PrefixCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		OBJ_106 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
@@ -240,6 +290,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4114EB4E209A42F20025E1ED /* PrefixApp */ = {
+			isa = PBXGroup;
+			children = (
+				4114EB4F209A42F20025E1ED /* AppDelegate.swift */,
+				4114EB51209A42F20025E1ED /* ViewController.swift */,
+				4114EB53209A42F20025E1ED /* Assets.xcassets */,
+				4114EB55209A42F20025E1ED /* Main.storyboard */,
+				4114EB58209A42F20025E1ED /* Info.plist */,
+				4114EB59209A42F20025E1ED /* PrefixApp.entitlements */,
+			);
+			path = PrefixApp;
+			sourceTree = "<group>";
+		};
 		OBJ_13 /* Prefix */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +395,7 @@
 				"Prefix::PrefixCore::Product" /* PrefixCore.framework */,
 				"Files::Files::Product" /* Files.framework */,
 				"SwiftCLI::SwiftCLI::Product" /* SwiftCLI.framework */,
+				4114EB4D209A42F10025E1ED /* PrefixApp.app */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -343,6 +407,7 @@
 				OBJ_7 /* Sources */,
 				OBJ_15 /* Tests */,
 				OBJ_18 /* Dependencies */,
+				4114EB4E209A42F20025E1ED /* PrefixApp */,
 				OBJ_45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -376,6 +441,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4114EB4C209A42F10025E1ED /* PrefixApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4114EB5C209A42F20025E1ED /* Build configuration list for PBXNativeTarget "PrefixApp" */;
+			buildPhases = (
+				4114EB49209A42F10025E1ED /* Sources */,
+				4114EB4A209A42F10025E1ED /* Frameworks */,
+				4114EB4B209A42F10025E1ED /* Resources */,
+				4114EB65209A430F0025E1ED /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4114EB60209A430F0025E1ED /* PBXTargetDependency */,
+				4114EB64209A430F0025E1ED /* PBXTargetDependency */,
+			);
+			name = PrefixApp;
+			productName = PrefixApp;
+			productReference = 4114EB4D209A42F10025E1ED /* PrefixApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		"Files::Files" /* Files */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_111 /* Build configuration list for PBXNativeTarget "Files" */;
@@ -513,7 +598,21 @@
 		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					4114EB4C209A42F10025E1ED = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = T4R84BG8N8;
+						ProvisioningStyle = Automatic;
+					};
+					"Files::Files" = {
+						DevelopmentTeam = T4R84BG8N8;
+					};
+					"Prefix::PrefixCore" = {
+						DevelopmentTeam = T4R84BG8N8;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Prefix" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -521,6 +620,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = OBJ_5;
 			productRefGroup = OBJ_45 /* Products */;
@@ -536,11 +636,33 @@
 				"Files::Files" /* Files */,
 				"SwiftCLI::SwiftCLI" /* SwiftCLI */,
 				"Prefix::PrefixPackageTests::ProductTarget" /* PrefixPackageTests */,
+				4114EB4C209A42F10025E1ED /* PrefixApp */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		4114EB4B209A42F10025E1ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4114EB54209A42F20025E1ED /* Assets.xcassets in Resources */,
+				4114EB57209A42F20025E1ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		4114EB49209A42F10025E1ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4114EB52209A42F20025E1ED /* ViewController.swift in Sources */,
+				4114EB50209A42F20025E1ED /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		OBJ_101 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -637,6 +759,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4114EB60209A430F0025E1ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Prefix::PrefixCore" /* PrefixCore */;
+			targetProxy = 4114EB5F209A430F0025E1ED /* PBXContainerItemProxy */;
+		};
+		4114EB64209A430F0025E1ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Files::Files" /* Files */;
+			targetProxy = 4114EB63209A430F0025E1ED /* PBXContainerItemProxy */;
+		};
 		OBJ_109 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Files::Files" /* Files */;
@@ -684,10 +816,140 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		4114EB55209A42F20025E1ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4114EB56209A42F20025E1ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		4114EB5A209A42F20025E1ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = PrefixApp/PrefixApp.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = T4R84BG8N8;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = PrefixApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.PrefixApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		4114EB5B209A42F20025E1ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = PrefixApp/PrefixApp.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = T4R84BG8N8;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = PrefixApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.PrefixApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		OBJ_100 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = T4R84BG8N8;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -710,6 +972,8 @@
 		OBJ_112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = T4R84BG8N8;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -732,6 +996,8 @@
 		OBJ_113 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = T4R84BG8N8;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -980,6 +1246,8 @@
 		OBJ_99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = T4R84BG8N8;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1002,6 +1270,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4114EB5C209A42F20025E1ED /* Build configuration list for PBXNativeTarget "PrefixApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4114EB5A209A42F20025E1ED /* Debug */,
+				4114EB5B209A42F20025E1ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		OBJ_111 /* Build configuration list for PBXNativeTarget "Files" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
