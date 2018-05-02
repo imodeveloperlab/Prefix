@@ -14,7 +14,7 @@ $ cp -f Prefix /usr/local/bin/prefix
 From terminal go to your folder with swift files you want to add prefix and run:
 
 ```
-prefix add PREFIX_NAME
+$ prefix add PREFIX_NAME
 ```
 
 and **Prefix** will create and subfolder with name PREFIX_NAME**Prefix** and put all changed files in.
