@@ -157,6 +157,12 @@ public extension String {
                     
                     //IF WE HAVE COMPONENTS
                     if swiftTypeComponnents.count == 2 {
+            
+                        if let firstChar = swiftTypeComponnents[0].first {
+                            if "\(firstChar)".lowercased() != "\(firstChar)" {
+                                return nil
+                            }
+                        }
                         
                         //AND COMPONENTS ARE NOT LOWERCASED
                         if swiftTypeComponnents[1] != swiftTypeComponnents[1].lowercased() {
@@ -328,7 +334,6 @@ public extension Array where Element == String {
         allTypes = Array(Set(allTypes))
         return allTypes
     }
-    
 }
 
 public extension StringProtocol where Index == String.Index {

@@ -51,12 +51,15 @@ public class PrefixRefactor {
                 
                 content.debugRanges(for: type)
                 
-                for posibleBegin in swiftTypeDeclarationsPosibleBegins {
-                    let search = "\(posibleBegin)\(type)"
-                    let replace = "\(posibleBegin)\(prefix)\(type)"
-                    content = content.replacingOccurrences(of: search, with: replace)
+                for posibleEnd in swiftTypeDeclarationsPosibleEnds {
+                    
+                    for posibleBegin in swiftTypeDeclarationsPosibleBegins {
+                        let search = "\(posibleBegin)\(type)\(posibleEnd)"
+                        let replace = "\(posibleBegin)\(prefix)\(type)\(posibleEnd)"
+                        content = content.replacingOccurrences(of: search, with: replace)
+                    }
                 }
-                
+                                
                 try toFolder.createFile(named: "\(prefix)\(file.name)", contents: content)
             }
         }

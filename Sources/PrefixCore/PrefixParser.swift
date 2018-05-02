@@ -10,10 +10,10 @@ import Foundation
 public enum PrefixParserPatternTag {}
 public typealias PrefixParserPattern = PrefixTypedValue<PrefixParserPatternTag, String>
 
-public let swiftTypeDeclarationsPosibleEnds = [" ", ":", "{", "?", ",", ".", ""]
-public let swiftTypeDeclarationsPosibleBegins = [" ", "[", "(", ":", ".","<", "&"]
+public let swiftTypeDeclarationsPosibleEnds = [" ", ":", "{", "?", ",", ".", "<","(",")","]","\n", ">"]
+public let swiftTypeDeclarationsPosibleBegins = [" ", "[", "(", ":", ".","<", "&",">"]
 public let swiftTypes = ["class", "protocol", "extension", "enum", "struct"]
-public let swiftPrivateTypes = ["UIView", "UIViewController", "String", "NSRegularExpression", "URL", "Error", "DispatchQueue", "Notification", "NSNumber", "Response", "Request", "pathExtension"]
+public let swiftPrivateTypes = ["UIView", "UIViewController", "String", "NSRegularExpression", "URL", "Error", "DispatchQueue", "Notification", "NSNumber"]
 
 public class PrefixParser {
     
