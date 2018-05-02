@@ -36,6 +36,7 @@
 		4114EB5E209A430F0025E1ED /* PrefixCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "Prefix::PrefixCore::Product" /* PrefixCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4114EB61209A430F0025E1ED /* Files.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Files::Files::Product" /* Files.framework */; };
 		4114EB62209A430F0025E1ED /* Files.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "Files::Files::Product" /* Files.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4114EB67209A4A120025E1ED /* DragFilesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114EB66209A4A120025E1ED /* DragFilesBox.swift */; };
 		41B2136D20988ED000172FDB /* PrefixRefactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2136A20988E8600172FDB /* PrefixRefactor.swift */; };
 		41B2136F20988F3D00172FDB /* PrefixError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2136E20988F3D00172FDB /* PrefixError.swift */; };
 		OBJ_102 /* PrefixFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* PrefixFiles.swift */; };
@@ -194,6 +195,7 @@
 		4114EB56209A42F20025E1ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4114EB58209A42F20025E1ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4114EB59209A42F20025E1ED /* PrefixApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrefixApp.entitlements; sourceTree = "<group>"; };
+		4114EB66209A4A120025E1ED /* DragFilesBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragFilesBox.swift; sourceTree = "<group>"; };
 		414D10C62097750000B77747 /* PrefixFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixFramework.swift; sourceTree = "<group>"; };
 		414D10C92097777500B77747 /* PrefixFrameworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixFrameworkExtension.swift; sourceTree = "<group>"; };
 		41B2136A20988E8600172FDB /* PrefixRefactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefixRefactor.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				4114EB4F209A42F20025E1ED /* AppDelegate.swift */,
 				4114EB51209A42F20025E1ED /* ViewController.swift */,
+				4114EB66209A4A120025E1ED /* DragFilesBox.swift */,
 				4114EB53209A42F20025E1ED /* Assets.xcassets */,
 				4114EB55209A42F20025E1ED /* Main.storyboard */,
 				4114EB58209A42F20025E1ED /* Info.plist */,
@@ -658,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4114EB67209A4A120025E1ED /* DragFilesBox.swift in Sources */,
 				4114EB52209A42F20025E1ED /* ViewController.swift in Sources */,
 				4114EB50209A42F20025E1ED /* AppDelegate.swift in Sources */,
 			);
