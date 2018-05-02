@@ -11,7 +11,7 @@ $ cd .build/x86_64-apple-macosx10.10/release
 $ cp -f Prefix /usr/local/bin/prefix
 ```
 
-#### Ussage
+#### Usage
 
 From terminal go to your folder with swift files you want to add prefix and run:
 
