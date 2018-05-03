@@ -1,3 +1,6 @@
 language: swift
 xcode_workspace: Prefix.xcodeproj
 xcode_scheme: Prefix
+
+script:
+    - xcodebuild test -project Prefix.xcodeproj -scheme Prefix ONLY_ACTIVE_ARCH=NO
