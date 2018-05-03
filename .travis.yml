@@ -1,0 +1,3 @@
+language: swift
+xcode_workspace: Prefix.xcodeproj
+xcode_scheme: Prefix
