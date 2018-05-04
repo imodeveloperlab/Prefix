@@ -60,7 +60,7 @@ class PrefixStringExtensionTests: XCTestCase {
         let classPattern = PrefixParser.containSwiftTypeDeclarations("protocol")
         let testFile = PrefixTestFile()
         XCTAssertNotNil(testFile.content())
-        XCTAssertEqual(testFile.content()?.getAllMatches(for: classPattern).count, 6)
+        XCTAssertEqual(testFile.content()?.getAllMatches(for: classPattern).count, 7)
     }
     
     func testGetAllProtocolAndClassMatches() {
@@ -70,14 +70,14 @@ class PrefixStringExtensionTests: XCTestCase {
         
         let testFile = PrefixTestFile()
         XCTAssertNotNil(testFile.content())
-        XCTAssertEqual(testFile.content()?.getAllMatches(for: [protocolPattern, classPattern]).count, 11)
+        XCTAssertEqual(testFile.content()?.getAllMatches(for: [protocolPattern, classPattern]).count, 12)
     }
     
     func testGetAllSwitfTypeDeclarations() {
         
         let testFile = PrefixTestFile()
         XCTAssertNotNil(testFile.content())
-        XCTAssertEqual(testFile.content()?.getAllSwitfTypeDeclarations().count, 12)
+        XCTAssertEqual(testFile.content()?.getAllSwitfTypeDeclarations().count, 15)
     }
     
     func testGetAllSwitfTypeDeclarationsSkipPrivate() {
@@ -107,6 +107,6 @@ class PrefixStringExtensionTests: XCTestCase {
         let testFile = PrefixTestFile()
         XCTAssertNotNil(testFile.content())
         let ranges = testFile.content()?.getAllSwiftTypeRanges()
-        XCTAssertEqual(ranges?.count, 12)
+        XCTAssertEqual(ranges?.count, 15)
     }
 }

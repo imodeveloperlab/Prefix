@@ -107,7 +107,9 @@ public extension String {
                     var containsPrivateType = false
                     
                     for privateType in swiftPrivateTypes {
-                        if type.contains(privateType) {
+                        
+                        let typeComponents = type.components(separatedBy: " ")
+                        if typeComponents[1] == privateType {
                             containsPrivateType = true
                             continue
                         }

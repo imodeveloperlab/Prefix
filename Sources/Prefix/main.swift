@@ -87,5 +87,7 @@ func test2() {
     }
 }
 
+test2()
+
 
 

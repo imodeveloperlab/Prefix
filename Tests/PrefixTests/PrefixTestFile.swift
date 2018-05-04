@@ -55,6 +55,15 @@ protocol prefixTestFileProtocol5{
 extension prefixTestFileProtocol5 {
 }
 
+public enum AFError: Error {
+}
+
+public protocol URLConvertible {
+}
+
+extension String: URLConvertible {
+}
+
 class UIView {
 }
 
