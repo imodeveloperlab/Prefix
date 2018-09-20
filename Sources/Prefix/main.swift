@@ -5,7 +5,7 @@ import Foundation
 
 class AddCommand: Command {
     
-    let name = "add"
+    var name = "add"
     let prefix = Parameter()
     
     func execute() throws {
@@ -31,7 +31,7 @@ class AddCommand: Command {
                     }
                 }
             }
-            
+                        
             try refactor.prefix(prefix: prefix.value, from: mainFolder, to: toFolder)
             
         } catch {

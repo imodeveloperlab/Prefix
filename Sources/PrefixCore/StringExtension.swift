@@ -185,7 +185,12 @@ public extension String {
     /// - Returns: Optional string
     func subsstring(with range: NSRange) -> String? {
         let string = self as NSString
-        return string.substring(with: range)
+        
+        if string.length >= range.location + range.length {
+            return string.substring(with: range)
+        }
+        
+        return nil
     }
     
     /// Get ranges from string
